@@ -5,5 +5,4 @@ function Skills({ skillList }){
     </ul>
   )
 }
-
 export default Skills;

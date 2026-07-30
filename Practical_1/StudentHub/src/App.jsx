@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <Header themeColor="#1d4ed8" />
+      <Header themeColor="#0140ec" />
       <About />
       <Skills skillList={["HTML", "CSS", "JavaScript", "React"]} />
       <Footer />

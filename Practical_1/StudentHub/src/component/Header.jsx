@@ -1,6 +1,6 @@
-function Header({ themeColor = "#1ded8" }) {
+function Header({ themeColor = "#0140ec" }) {
   return (
-    <h1 style={{ color: themeColor }}>Student Portfolio</h1>
+    <h3 style={{ backgroundColor: themeColor }}>Student Portfolio</h3>
   );
 }
 
