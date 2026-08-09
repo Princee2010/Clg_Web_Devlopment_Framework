@@ -6,6 +6,7 @@ const PORT = 5000;
 // Middleware to read JSON data
 app.use(express.json());
 
+
 // Content-Type Validation Middleware
 app.use((req, res, next) => {
 
@@ -154,14 +155,35 @@ app.use((err, req, res, next) => {
 
 });
 
-// Start Server
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
 // Test Route
 app.get("/", (req, res) => {
     res.send("Task Manager API is Running...");
 });
+
+
+// 404 Handler
+app.use((req, res) => {
+    res.status(404).json({
+        success: false,
+        error: "Route Not Found",
+        path: req.originalUrl,
+        method: req.method
+    });
+});
+
+// MUST BE THE LAST MIDDLEWARE
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+
+    res.status(500).json({
+        success: false,
+        error: "Something went wrong"
+    });
+});
+
+
+
+
 
 // Start Server
 app.listen(PORT, () => {
