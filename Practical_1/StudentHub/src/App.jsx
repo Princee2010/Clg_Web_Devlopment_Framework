@@ -13,6 +13,7 @@ function App() {
       <About />
       <Skills skillList={["HTML", "CSS", "JavaScript", "React"]} />
       <Footer />
+      
     </div>
   );
 }
